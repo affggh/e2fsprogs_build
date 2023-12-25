@@ -1,0 +1,18 @@
+[submodule "src/e2fsprogs"]
+	path = src/e2fsprogs
+	url = https://android.googlesource.com/platform/external/e2fsprogs
+[submodule "src/logging"]
+	path = src/logging
+	url = https://android.googlesource.com/platform/system/logging
+[submodule "src/core"]
+	path = src/core
+	url = https://android.googlesource.com/platform/system/core/
+[submodule "src/boringssl"]
+	path = src/boringssl
+	url = https://android.googlesource.com/platform/external/boringssl
+[submodule "src/libbase"]
+	path = src/libbase
+	url = https://android.googlesource.com/platform/system/libbase
+[submodule "src/zlib"]
+	path = src/zlib
+	url = https://android.googlesource.com/platform/external/zlib
