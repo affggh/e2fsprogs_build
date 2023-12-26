@@ -47,7 +47,7 @@ if (WIN32 OR CYGWIN)
 endif ()
 
 if (CYGWIN)
-    list(APPEND TARGET_CFLAGS "-Doff64_t=_off64_t")
+    list(APPEND TARGET_CFLAGS "-Doff64_t=off_t")
 endif ()
 
 add_library(${TARGET} STATIC ${libbase_srcs})

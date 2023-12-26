@@ -41,6 +41,7 @@ target_include_directories(${TARGET} PRIVATE
     ${TARGET_SRC_DIR}
 )
 target_link_libraries(${TARGET} ${common_static_link_lib})
+target_link_options(${TARGET} PRIVATE "-static")
 
 include(e2fsprogs_defaults.cmake)
 if (CYGWIN)
@@ -79,3 +80,4 @@ target_include_directories(${TARGET} PRIVATE
     ${LIB_DIR}
 )
 target_link_libraries(${TARGET} ${common_static_link_lib})
+target_link_options(${TARGET} PRIVATE "-static")

@@ -8,7 +8,7 @@ set(TARGET_CFLAGS
 
 if (CYGWIN)
     list(APPEND TARGET_CFLAGS 
-        "-Doff64_t=_off64_t"
+        "-Doff64_t=off_t"
         "-Dftruncate64=ftruncate"
         "-Dlseek64=lseek"
         "-Wno-macro-redefined"
