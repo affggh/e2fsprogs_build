@@ -8,11 +8,12 @@
 	branch = android-14.0.0_r18
 [submodule "src/core"]
 	path = src/core
-	url = https://android.googlesource.com/platform/system/core/
+	url = https://android.googlesource.com/platform/system/core
 	branch = android-14.0.0_r18
 [submodule "src/boringssl"]
 	path = src/boringssl
 	url = https://android.googlesource.com/platform/external/boringssl
+	branch = android-14.0.0_r18
 [submodule "src/libbase"]
 	path = src/libbase
 	url = https://android.googlesource.com/platform/system/libbase
