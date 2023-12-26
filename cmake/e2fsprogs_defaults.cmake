@@ -13,6 +13,7 @@ if (CYGWIN)
     list(APPEND E2FSPROGS_DEFAULT_CFLAGS 
         "-Wno-char-subscripts"
         "-Wno-unused-but-set-variable"
+        "-g"
         )
 endif ()
 

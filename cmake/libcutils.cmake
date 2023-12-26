@@ -9,6 +9,10 @@ set(TARGET_CFLAGS
     "-Wno-exit-time-destructors"
 )
 
+if (CYGWIN)
+    list(APPEND TARGET_CFLAGS "-static")
+endif ()
+
 set(libcutils_srcs
     "${TARGET_SRC_DIR}/config_utils.cpp"
     "${TARGET_SRC_DIR}/iosched_policy.cpp"
