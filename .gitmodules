@@ -1,24 +1,31 @@
 [submodule "src/e2fsprogs"]
 	path = src/e2fsprogs
 	url = https://android.googlesource.com/platform/external/e2fsprogs
+	branch = android-14.0.0_r18
 [submodule "src/logging"]
 	path = src/logging
 	url = https://android.googlesource.com/platform/system/logging
+	branch = android-14.0.0_r18
 [submodule "src/core"]
 	path = src/core
 	url = https://android.googlesource.com/platform/system/core/
+	branch = android-14.0.0_r18
 [submodule "src/boringssl"]
 	path = src/boringssl
 	url = https://android.googlesource.com/platform/external/boringssl
 [submodule "src/libbase"]
 	path = src/libbase
 	url = https://android.googlesource.com/platform/system/libbase
+	branch = android-14.0.0_r18
 [submodule "src/zlib"]
 	path = src/zlib
 	url = https://android.googlesource.com/platform/external/zlib
+	branch = android-14.0.0_r18
 [submodule "src/selinux"]
 	path = src/selinux
 	url = https://android.googlesource.com/platform/external/selinux
+	branch = android-14.0.0_r18
 [submodule "src/pcre"]
 	path = src/pcre
 	url = https://android.googlesource.com/platform/external/pcre
+	branch = android-14.0.0_r18
