@@ -1,0 +1,49 @@
+From 7fc82e05ce5b16c3d220bbe404395261c4c8525a Mon Sep 17 00:00:00 2001
+From: affggh <879632264@qq.com>
+Date: Tue, 26 Dec 2023 22:43:02 +0800
+Subject: [PATCH] e2fsprogs: Add cygwin definations
+
+---
+ lib/config.h | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+
+diff --git a/lib/config.h b/lib/config.h
+index c228860..662ee45 100644
+--- a/lib/config.h
++++ b/lib/config.h
+@@ -37,16 +37,20 @@
+ #if defined(_WIN32)
+ # define HAVE_LINUX_TYPES_H 1
+ #endif
+-#if defined(__APPLE__) || defined(__linux__)
++#if defined(__APPLE__) || defined(__linux__) || defined(__CYGWIN__)
+ # define HAVE_FCNTL 1
+ # define HAVE_FSYNC 1
+ # define HAVE_GETPAGESIZE 1
++#ifndef __CYGWIN__
+ # define HAVE_NET_IF_H 1
++#endif
+ # define HAVE_NETINET_IN_H 1
+ # define HAVE_PREAD 1
+ # define HAVE_PWRITE 1
+ # define HAVE_POSIX_MEMALIGN 1
++#ifndef __CYGWIN__
+ # define HAVE_SYS_IOCTL_H 1
++#endif
+ # define HAVE_SYS_MMAN_H 1
+ # define HAVE_SYS_MOUNT_H 1
+ # define HAVE_SYS_PARAM_H 1
+@@ -70,3 +74,10 @@
+ # define HAVE_SETMNTENT 1
+ # define HAVE_SYS_PRCTL_H 1
+ #endif
++
++#if defined(__CYGWIN__)
++# define HAVE_FALLOCATE 1
++# define HAVE_MNTENT_H 1
++# define HAVE_SETMNTENT 1
++#endif
++
+-- 
+2.42.1
+
