@@ -1,0 +1,11 @@
+set(libbase_headers               "${LIB_DIR}/libbase/include"                      CACHE INTERNAL "libbase_headers")
+set(liblog_headers                "${LIB_DIR}/logging/liblog/include"               CACHE INTERNAL "liblog_headers")
+set(libcutils_headers             "${LIB_DIR}/core/libcutils/include"               CACHE INTERNAL "libcutils_headers")
+set(libsparse_headers             "${LIB_DIR}/core/libsparse/include"               CACHE INTERNAL "libsparse_headers")
+set(libext2_headers               "${LIB_DIR}/e2fsprogs/include"                    CACHE INTERNAL "libext2_headers")
+set(libext2lib_headers            "${LIB_DIR}/e2fsprogs/lib"                        CACHE INTERNAL "libext2lib_headers")
+
+set(libpcre2_headers              "${LIB_DIR}/pcre/include"                         CACHE INTERNAL "libpcre2_headers")
+set(libselinux_headers            "${LIB_DIR}/selinux/libselinux/include"           CACHE INTERNAL "libselinux_headers")
+set(libz_headers                  "${LIB_DIR}/zlib"                                 CACHE INTERNAL "libz_headers")
+set(libcrypto_headers             "${LIB_DIR}/boringssl/src/include"                CACHE INTERNAL "libcrypto_headers")

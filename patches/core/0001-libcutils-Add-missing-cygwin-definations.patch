@@ -1,0 +1,30 @@
+From 0481951926c72b4b49db56e5a03be13a14e333aa Mon Sep 17 00:00:00 2001
+From: affggh <879632264@qq.com>
+Date: Tue, 26 Dec 2023 00:28:22 +0800
+Subject: [PATCH] libcutils: Add missing cygwin definations
+
+---
+ libcutils/include/private/fs_config.h | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/libcutils/include/private/fs_config.h b/libcutils/include/private/fs_config.h
+index 45f46e549..6c596d57a 100644
+--- a/libcutils/include/private/fs_config.h
++++ b/libcutils/include/private/fs_config.h
+@@ -24,7 +24,13 @@
+ #include <stdint.h>
+ #include <sys/cdefs.h>
+ 
++#if !defined(__CYGWIN__)
+ #include <linux/capability.h>
++#else
++#define CAP_SETGID           6
++#define CAP_SETUID           7
++#define CAP_BLOCK_SUSPEND    36
++#endif
+ 
+ /* Rules for directories and files has moved to system/code/libcutils/fs_config.c */
+ 
+-- 
+2.42.1
+

@@ -16,3 +16,9 @@
 [submodule "src/zlib"]
 	path = src/zlib
 	url = https://android.googlesource.com/platform/external/zlib
+[submodule "src/selinux"]
+	path = src/selinux
+	url = https://android.googlesource.com/platform/external/selinux
+[submodule "src/pcre"]
+	path = src/pcre
+	url = https://android.googlesource.com/platform/external/pcre
