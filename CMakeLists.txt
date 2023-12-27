@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.20)
 project(e2fsprogs LANGUAGES C CXX)
 
 set(CMAKE_C_STANDARD 11)
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -28,11 +28,11 @@ set(GLOBAL_CFLAGS
 	"-fno-exceptions"
 	"-fno-rtti"
 )
-if (NOT CYGWIN)
-	# Cygwin libcxx has not impl yet.
-	list(APPEND GLOBAL_CFLAGS
-		"-nostdinc++"
-	)
+
+if (CYGWIN)
+    list(APPEND GLOBAL_CFLAGS
+        "-Wno-unknown-warning-option"
+        )
 endif()
 
 set(GLOBAL_CFLAGS_RELEASE
@@ -57,8 +57,8 @@ elseif (CMAKE_SYSTEM_NAME MATCHES "Linux|Android")
 		list(APPEND GLOBAL_CFLAGS "-DANDROID" "-mllvm" "-polly")
 	endif ()
 elseif (CMAKE_SYSTEM_NAME MATCHES "CYGWIN")
-	list(APPEND GLOBAL_CFLAGS "-static")
-	list(APPEND GLOBAL_LDFLAGS_RELEASE "-Wl,-s,-x,--gc-sections" "-static")
+	list(APPEND GLOBAL_CFLAGS "-static" "-stdlib=libc++")
+	list(APPEND GLOBAL_LDFLAGS_RELEASE "-Wl,-s,-x,--gc-sections")
 endif ()
 
 if (CMAKE_BUILD_TYPE STREQUAL "Release")
@@ -93,7 +93,7 @@ add_link_options("$<$<LINK_LANGUAGE:C>:${GLOBAL_LDFLAGS}>" "$<$<LINK_LANGUAGE:CX
 set(LIB_DIR "${PROJECT_SOURCE_DIR}/src")
 
 if (CYGWIN)
-    # Cygwin spce patch
+    # Cygwin spec patch
     execute_process(COMMAND "./cygwin_apply_patch.sh" "${LIB_DIR}")
 endif ()
 

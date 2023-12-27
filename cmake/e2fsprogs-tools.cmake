@@ -19,9 +19,11 @@ set(common_static_link_lib
     "pcre2"
 )
 
-if (CYGWIN)
-    list(common_link_options "-stdlib=libc++" "-static" "-s")
-endif ()
+set(common_link_options 
+    "-stdlib=libc++" 
+    "-static" 
+    "-s"
+)
 
 # mke2fs
 include(e2fsprogs_defaults.cmake)
