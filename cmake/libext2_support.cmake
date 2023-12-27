@@ -26,19 +26,19 @@ set(libext2_quota_srcs
     "${TARGET_SRC_DIR}/quotaio_v2.c"
 )
 
-set(libext2_profile_src
+set(libext2_profile_srcs
     "${TARGET_SRC_DIR}/prof_err.c"
     "${TARGET_SRC_DIR}/profile.c"
 )
 
-set(libext2_support_src
+set(libext2_support_srcs
     "${TARGET_SRC_DIR}/cstring.c"
 )
 
 
 add_library(ext2_quota STATIC ${libext2_quota_srcs})
-add_library(ext2_profile STATIC ${libext2_profile_src})
-add_library(${TARGET} STATIC ${libext2_ss_srcs})
+add_library(ext2_profile STATIC ${libext2_profile_srcs})
+add_library(${TARGET} STATIC ${libext2_support_srcs})
 
 target_include_directories(ext2_quota PRIVATE
     ${E2FSPROGS_DEFAULT_INCLUDES}

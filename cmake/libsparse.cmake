@@ -13,6 +13,7 @@ if (CYGWIN)
         "-Dlseek64=lseek"
         "-Wno-macro-redefined"
         "-static"
+        "-stdlib=libc++"
         )
 endif ()
 

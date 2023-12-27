@@ -17,6 +17,7 @@ list(APPEND TARGET_CFLAGS "-Wno-c99-designator")
 if (CYGWIN)
     list(APPEND TARGET_CFLAGS "-D_Bool=bool"
         "-static"
+        "-stdlib=libc++"
     )
 endif ()
 

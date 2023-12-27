@@ -43,6 +43,7 @@ if (WIN32 OR CYGWIN)
     list(REMOVE_ITEM libbase_srcs "${TARGET_SRC_DIR}/cmsg.cpp")
     list(APPEND TARGET_CFLAGS "-D_POSIX_THREAD_SAFE_FUNCTIONS"
         "-static"    
+        "-stdlib=libc++"
     )
 endif ()
 

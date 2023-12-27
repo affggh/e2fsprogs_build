@@ -10,7 +10,7 @@ set(TARGET_CFLAGS
 )
 
 if (CYGWIN)
-    list(APPEND TARGET_CFLAGS "-static")
+    list(APPEND TARGET_CFLAGS "-static" "-stdlib=libc++")
 endif ()
 
 set(libcutils_srcs
