@@ -30,3 +30,6 @@
 	path = src/pcre
 	url = https://android.googlesource.com/platform/external/pcre
 	branch = android-14.0.0_r18
+[submodule "src/e2fstool"]
+	path = src/e2fstool
+	url = https://github.com/affggh/e2fstool
