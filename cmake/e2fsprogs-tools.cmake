@@ -233,3 +233,31 @@ target_compile_options(${TARGET} PRIVATE
 "$<$<COMPILE_LANGUAGE:C>:${TARGET_CFLAGS}>"
 "$<$<COMPILE_LANGUAGE:CXX>:${TARGET_CFLAGS}>"
 )
+
+if (CYGWIN)
+# e2fstool
+set(TARGET e2fstool)
+set(TARGET_SRC_DIR "${LIB_DIR}/e2fstool")
+set(TARGET_CFLAGS
+	${E2FSPROGS_DEFAULT_CFLAGS}
+)
+set(e2fstool_srcs
+    "${TARGET_SRC_DIR}/e2fstool.c"
+)
+add_executable(${TARGET} ${e2fstool_srcs})
+target_include_directories(${TARGET} PRIVATE
+    ${E2FSPROGS_DEFAULT_INCLUDES}
+    ${TARGET_SRC_DIR}
+    ${libsparse_headers}
+    ${libbase_headers}
+    ${libcutils_headers}
+    ${libext2lib_headers}/ext2fs
+    ${libext2lib_headers}/../misc
+)
+target_link_libraries(${TARGET} ${common_static_link_lib})
+target_link_options(${TARGET} PRIVATE ${common_link_options})
+target_compile_options(${TARGET} PRIVATE
+"$<$<COMPILE_LANGUAGE:C>:${TARGET_CFLAGS}>"
+"$<$<COMPILE_LANGUAGE:CXX>:${TARGET_CFLAGS}>"
+)
+endif () # CYGWIN
